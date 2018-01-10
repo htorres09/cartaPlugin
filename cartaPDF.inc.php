@@ -16,7 +16,7 @@ class cartaPDF extends GenericPlugin{
         $success = parent::register($category, $path);
 
         if(!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
-        
+
         if($success && $this->getEnabled() )
         {
             HookRegistry::register('Templates::Article::Footer::PageFooter', array($this, 'callbackTemplateArticlePageFooter'));
@@ -24,9 +24,9 @@ class cartaPDF extends GenericPlugin{
         return $success;
     }
 
-    function callback($hookName, $args){
+    /*function callback($hookName, $args){
         //CODE HERE
-    }
+    }*/
 
     function getName(){ return 'cartaPlugin'; }
 
@@ -38,12 +38,30 @@ class cartaPDF extends GenericPlugin{
         return "Permite crear una carta de Aceptación PDF";
     }
 
+    function getTemplatePath($inCore = false){
+        return parent::getTemplatePath($inCore) . 'templates/';
+    }
+
+    function callbackTemplateArticlePageFooter($hookName, $params){
+        $smarty =& $params[1];
+        $output =& $params[2];
+
+        $displayedArticle = $smarty->get_template_vars('article');
+        $authors = $displayedArticle->getAuthors();
+        $authorDao = DAORegistry::getDAO('AuthorDAO');
+
+        $displayedArticle->
+
+    }
+
+
+
     /**
      * Get the filename of the ADODB schema for this plugin
      */
-    function getInstallSchemaFile(){
-        return $this->getPluginPath() . '/' . 'schema.xml';
-    }
+    /*function getInstallSchemaFile(){
+     *   return $this->getPluginPath() . '/' . 'schema.xml';
+    }*/
 
     /**
      * Set the enabled/disabled state of the plugin
