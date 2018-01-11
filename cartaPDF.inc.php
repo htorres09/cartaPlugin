@@ -1,9 +1,10 @@
 <?php
 
 /**
- * @file plugins/generic/carta/CartaHandler.php
+ * @file plugins/generic/cartaPlugin/cartaPDF.inc.php
  * Héctor Torres - Universidad Autónoma de Nuevo León
  * hector.torresg@uanl.mx
+ * Distributed under the GNU GPL v3. For full terms see the file LICENCSE
  *
  * @class cartaPDF
  * @ingroup plugins_generic_cartaPDF
@@ -48,10 +49,24 @@ class cartaPDF extends GenericPlugin{
 
         $displayedArticle = $smarty->get_template_vars('article');
         $authors = $displayedArticle->getAuthors();
+        $titulo = $displayedArticle->getTitle();
+        $status = $displayedArticle->getStatus();
+        $fechaSubmit = $displayedArticle->getDateSubmited();
+        $fechaMod = $displayedArticle->getDateStatusModified();
         $authorDao = DAORegistry::getDAO('AuthorDAO');
 
-        $displayedArticle->
+        $nombres = [];
+        foreach ($authors as $author) {
+            $nombres[] = $author->getFullName();
+        }
+        $resultado = [];
+        array_push($resultado, 'titulo'=>$title, 'autores'=>$nombres, 'fechaSubmit' => $fechaSubmit, 'fehcaAceptada' => $fechaMod, 'status'=>$status);
 
+        // Visualizar
+        import('lib.pkp.classes.core.VirtualArrayIterator');
+        returner = new VirtualArrayIterator($resultado, 1, 1, 1);
+        $smarty->assign('cartaPDF', returner);
+        $output .= $smarty->fetch($this->getTemplatePath() . 'articleFooter.tpl');
     }
 
 
