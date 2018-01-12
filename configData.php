@@ -18,11 +18,11 @@ $image = array(
     "otherLogo" => "conference.png",
 );
 
-$decission => array(
-    1 => "<<Aceptada>>";
-    2 => "considerada <<Publicable con modificaciones>>";
-    3 => "considerada <<Reevlauable>>";
-    4 => "considerada >>";
+$decission = array(
+    1 => "<<Aceptada>>",
+    2 => "considerada <<Publicable con modificaciones>>",
+    3 => "considerada <<Reevlauable>>",
+    4 => "considerada >>",
 );
 
 ?>
