@@ -12,9 +12,9 @@ $configGeneral = array(
 );
 
 $image = array(
-    "Header" => "imagenes/CartaAceptacion.png",
-    "Firm" => "FirmaAceptacion.png",
-    "institutionLogo" => "logoUanl.png",
+    "Header" => "images/CartaAceptacion.png",
+    "Firm" => "images/FirmaAceptacion.png",
+    "institutionLogo" => "images/uanl-logo.png",
     "otherLogo" => "conference.png",
 );
 

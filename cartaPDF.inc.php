@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file plugins/generic/cartaPlugin/cartaPDF.inc.php
  * Héctor Torres - Universidad Autónoma de Nuevo León
@@ -180,8 +179,5 @@ class cartaPDF extends GenericPlugin{
 				return false;
 		}
 	}
-
-
-
 }
 ?>
