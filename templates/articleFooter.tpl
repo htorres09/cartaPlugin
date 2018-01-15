@@ -9,9 +9,14 @@
 
  <div id="cartaPdf">
      <h3>{translate key="plugins.generic.cartaPDF.header"}</h3>
-     {if !$cartaPDF->wasEmpty()}
+     <div class="">
         <ul>
-            <li><a href="crearCarta.php" target="_blank">Certificado</a></li>
+            <li>
+                {$returner}
+            </li>
+            <li>
+                <a href="{$query}" target='_blank' class='pkp_button_primary'> Ver Carta de Aceptación </a>
+            </li>
         </ul>
-     {/if}
+     <div>
  </div>
