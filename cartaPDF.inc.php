@@ -64,34 +64,11 @@ class cartaPDF extends GenericPlugin{
                     'status'=>$status);
 
         // Visualizar
-        //import('lib.pkp.classes.core.VirtualArrayIterator');
-        //returner = new VirtualArrayIterator($resultado, 1, 1, 1);
-        $query = http_build_query($resultado);
-        $returner = "<a href='crearCarta.php?'" . $query . "' target='_blank'>";
+        $query = base64_decode( json_encode( $resultado ) );
+        $returner = "<a href='crearCarta.php?data=" . $query . "' target='_blank'>";
         $smarty->assign('cartaPDF', returner);
         $output .= $smarty->fetch($this->getTemplatePath() . 'articleFooter.tpl');
     }
-
-    /*function crearCarta($params){
-        $lineCount = 0;
-
-        $pdf = new Carta();
-        $pdf->AddPage();
-        $pdf->SetFont("font", "", 12);
-        $pdf->Ln(65);
-        $pdf->Cell(165, 10, $params['fechaAceptada'], 0, 0, "R");
-        $pdf->Ln(35);
-        foreach ($params["autores"] as &$nombre) {
-            $pdf->Cell(200, 5, $nombre, 0, 1, "C");
-            $lineCount += 1;
-        }
-        $pdf->Ln(46 - $lineCount);
-        $pdf->MultiCell(0, 5, $params["titulo"], 0, 0, "C");
-        $pdf->Ln(13- $lineCount);
-        $pdf->Cell(240, 5, $status, 0, 0);
-
-        $pdf->Output("D", $params["fechaSubmit"]+"_"+$params["titulo"], true);
-    }*/
 
     /**
      * Get the filename of the ADODB schema for this plugin

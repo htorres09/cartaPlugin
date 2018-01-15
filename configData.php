@@ -11,18 +11,18 @@ $configGeneral = array(
     "sizeLetter" => "12"
 );
 
-$image = array(
-    "Header" => "images/CartaAceptacion.png",
-    "Firm" => "images/FirmaAceptacion.png",
-    "institutionLogo" => "images/uanl-logo.png",
+$imagenes = array(
+    "Header" => "CartaAceptacion.png",
+    "Firm" => "FirmaAceptacion.png",
+    "institutionLogo" => "uanl-logo.png",
     "otherLogo" => "conference.png",
 );
 
-$decission => array(
-    1 => "<<Aceptada>>";
-    2 => "considerada <<Publicable con modificaciones>>";
-    3 => "considerada <<Reevlauable>>";
-    4 => "considerada >>";
+$decission = array(
+    1 => "<<Aceptada>>",
+    2 => "considerada <<Publicable con modificaciones>>",
+    3 => "considerada <<Reevlauable>>",
+    4 => "considerada >>",
 );
 
 ?>
