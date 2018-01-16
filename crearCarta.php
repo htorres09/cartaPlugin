@@ -1,12 +1,10 @@
 <?php
 //Include configuration archive and class carta
-include "configData.php";
-//require_once($configGeneral["pathFPDF"]);
 /* Importar FPDF*/
 require('fpdf/fpdf.php');
 
 /* class carta*/
-class carta extends FPDF{
+class Carta extends FPDF{
     // PDF Header
     function Header(){
         $this->Image("CartaAceptacion.png", 0, 0, 200, 300, "PNG");
@@ -55,9 +53,11 @@ function crearCarta($data){
     $pdf->Ln(10- $lineCount);
     $pdf->Cell(240, 5, $status, 0, 0);
 
-    //Opcion D es para forzar a descarga directa f
-    //$pdf->Output("D", $fechaSubmit+"_"+$titulo, true);
-    $pdf->Output();
+    //Option I direct to browser
+    //Opcion D direct download
+    //Option F save file in local
+    //Option S send document as string chain
+    $pdf->Output("I", $fechaSubmit+"_"+$titulo, true);
 }
 
 /* MAIN*/
