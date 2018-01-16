@@ -10,13 +10,10 @@
  * @brief Carta PDF Plugin
  */
 import('lib.pkp.classes.plugins.GenericPlugin');
-/*require_once($configGeneral["pathFPDF"]);*/
 
 class CartaPlugin extends GenericPlugin{
 
-    //
     // Implement template methods from Plugin.
-    //
     /**
      * @see Plugin::register()
      */
@@ -32,7 +29,7 @@ class CartaPlugin extends GenericPlugin{
     /**
      * @see Plugin::getName()
      */
-    function getName(){ //return 'cartaPlugin';
+    function getName(){
         return __('plugins.generic.cartaPlugin.Name');
     }
 
@@ -40,7 +37,6 @@ class CartaPlugin extends GenericPlugin{
      * @see Plugin::getDisplayName()
      */
     function getDisplayName(){
-        //return "Plugin Carta de Aceptación PDF";
         return __('plugins.generic.cartaPlugin.displayName');
     }
 
@@ -48,7 +44,6 @@ class CartaPlugin extends GenericPlugin{
      * @see Plugin::getDescription()
      */
     function getDescription(){
-        //return "Permite crear una carta de Aceptación PDF";
         return __('"plugins.generic.cartaPlugin.description');
     }
 
@@ -66,9 +61,7 @@ class CartaPlugin extends GenericPlugin{
         return "Permite crear una carta de Aceptación PDF";
     }
 
-    //
     // View level hook implementations.
-    //
     /**
      * @see templates/article/footer.tpl
      */
