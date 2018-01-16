@@ -22,12 +22,9 @@ class CartaPlugin extends GenericPlugin{
      */
     function register($category, $path){
         $success = parent::register($category, $path);
-
-        if(!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
-
-        if($success && $this->getEnabled() )
-        {
-            HookRegistry::register('Templates::Article::Footer::PageFooter', array($this, 'callbackTemplateArticlePageFooter'));
+        //if(!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
+        if($success && $this->getEnabled()){
+            HookRegistry::register("Templates::Common::Footer::PageFooter", array($this, 'callbackTemplateArticlePageFooter'));
         }
         return $success;
     }
@@ -56,6 +53,13 @@ class CartaPlugin extends GenericPlugin{
      */
     function getTemplatePath($inCore = false){
         return parent::getTemplatePath($inCore) . 'templates/';
+    }
+
+    /**
+     * @see Plugin::isSitePlugin()
+     */
+    function getDescription(){
+        return "Permite crear una carta de Aceptación PDF";
     }
 
     //
