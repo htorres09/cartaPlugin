@@ -1,10 +1,21 @@
 <?xml version="10.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/generic/cartaPlugin/version.xml
+  *
+  * * Héctor Torres - Universidad Autónoma de Nuevo León
+  * hector.torresg@uanl.mx
+  * Distributed under the GNU GPL v3. For full terms see the file LICENCSE
+  *
+  * Plugin version information.
+  -->
+
 <version>
-    <application>cartaPDF</application>
+    <application>cartaPlugin</application>
     <type>plugins.generic</type>
     <release>1.0.0.0</release>
-    <date>07/12/2017</date>
+    <date>2018-01-16</date>
     <lazy-load>1</lazy-load>
-    <class>cartaPDF</class>
+    <class>CartaPlugin</class>
 </version>

@@ -32,20 +32,24 @@ class CartaPlugin extends GenericPlugin{
     /**
      * @see Plugin::getName()
      */
-    function getName(){ return 'cartaPlugin'; }
+    function getName(){ //return 'cartaPlugin';
+        return __('plugins.generic.cartaPlugin.Name');
+    }
 
     /**
      * @see Plugin::getDisplayName()
      */
     function getDisplayName(){
-        return "Plugin Carta de Aceptación PDF";
+        //return "Plugin Carta de Aceptación PDF";
+        return __('plugins.generic.cartaPlugin.displayName');
     }
 
     /**
      * @see Plugin::getDescription()
      */
     function getDescription(){
-        return "Permite crear una carta de Aceptación PDF";
+        //return "Permite crear una carta de Aceptación PDF";
+        return __('"plugins.generic.cartaPlugin.description');
     }
 
     /**

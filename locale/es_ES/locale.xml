@@ -12,7 +12,8 @@
   -->
 
 <locale name="es_ES" full_name="Español (España)">
-    <message key="plugins.generic.cartaPDF.displayName">[TEST] Carta de Aceptación</message>
-    <message key="plugins.geneirc.carta.description">Este módulo permite crear una carta de aceptación al editor.</message>
-    <message key="plugins.geneirc.carta.header">Carta de Aceptación del Articulo</message>
+    <message key="plugins.generic.cartaPlugin.Name">[TEST]</message>
+    <message key="plugins.generic.cartaPlugin.displayName">[TEST] Carta de Aceptación</message>
+    <message key="plugins.geneirc.cartaPlugin.description">Este módulo permite crear una carta de aceptación al editor.</message>
+    <message key="plugins.geneirc.cartaPlugin.header">Carta de Aceptación del Articulo</message>
 </locale>
