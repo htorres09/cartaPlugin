@@ -65,10 +65,15 @@ class cartaPDF extends GenericPlugin{
 
         // Visualizar
         $query = base64_decode( json_encode( $resultado ) );
+<<<<<<< HEAD
         $returner = "<a href='crearCarta.php?data=" . $query . "' target='_blank' class='pkp_button_primary'> Ver Carta de Aceptación </a>";
         $url = "crearCarta.php?data=" . $query;
         $smarty->assign('cartaLink', returner);
         $smarty->assign('query', $url);
+=======
+        $returner = "<a href='crearCarta.php?data=" . $query . "' target='_blank'>";
+        $smarty->assign('cartaPDF', returner);
+>>>>>>> 56fadf52485ecd15488d0607f836069dac172fc1
         $output .= $smarty->fetch($this->getTemplatePath() . 'articleFooter.tpl');
     }
 
