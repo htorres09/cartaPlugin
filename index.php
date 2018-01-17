@@ -8,6 +8,6 @@
  * @brief Crear carta de aceptacion PDF
  */
 
- require_once('CartaPDFPlugin.inc.php');
- return new CartaPDFPlugin();
+ require_once('CartaPlugin.inc.php');
+ return new CartaPlugin();
 ?>
