@@ -21,7 +21,8 @@ class CartaPlugin extends GenericPlugin{
         $success = parent::register($category, $path);
         //if(!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
         if($success && $this->getEnabled()){
-            HookRegistry::register("Templates::Common::Footer::PageFooter", array($this, 'callbackTemplateArticlePageFooter'));
+            HookRegistry::register('Templates::Article::Footer::PageFooter', array($this, 'callbackTemplateArticlePageFooter'));
+            //HookRegistry::register("Templates::Common::Footer::PageFooter", array($this, 'callbackTemplateArticlePageFooter'));
         }
         return $success;
     }
