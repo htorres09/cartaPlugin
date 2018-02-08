@@ -55,6 +55,10 @@ class CartaPlugin extends GenericPlugin{
         return parent::getTemplatePath($inCore) . 'templates/';
     }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 81e83a58a6ee41361583188ece310a919c998101
     // View level hook implementations.
     /**
      * @see templates/article/footer.tpl
