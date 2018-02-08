@@ -55,13 +55,6 @@ class CartaPlugin extends GenericPlugin{
         return parent::getTemplatePath($inCore) . 'templates/';
     }
 
-    /**
-     * @see Plugin::isSitePlugin()
-     */
-    function getDescription(){
-        return "Permite crear una carta de Aceptación PDF";
-    }
-
     // View level hook implementations.
     /**
      * @see templates/article/footer.tpl
