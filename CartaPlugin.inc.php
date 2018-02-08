@@ -5,9 +5,6 @@
  * hector.torresg@uanl.mx
  * Distributed under the GNU GPL v3. For full terms see the file LICENCSE
  *
- * @class cartaPDF
- * @ingroup plugins_generic_cartaPDF
- * @brief Carta PDF Plugin
  */
 import('lib.pkp.classes.plugins.GenericPlugin');
 
@@ -21,8 +18,6 @@ class CartaPlugin extends GenericPlugin{
         $success = parent::register($category, $path);
         //if(!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return $success;
         if($success && $this->getEnabled()){
-            HookRegistry::register('Templates::Article::Footer::PageFooter', array($this, 'callbackTemplateArticlePageFooter'));
-            //HookRegistry::register("Templates::Common::Footer::PageFooter", array($this, 'callbackTemplateArticlePageFooter'));
         }
         return $success;
     }
@@ -31,21 +26,18 @@ class CartaPlugin extends GenericPlugin{
      * @see Plugin::getName()
      */
     function getName(){
-        return __('plugins.generic.cartaPlugin.Name');
     }
 
     /**
      * @see Plugin::getDisplayName()
      */
     function getDisplayName(){
-        return __('plugins.generic.cartaPlugin.displayName');
     }
 
     /**
      * @see Plugin::getDescription()
      */
     function getDescription(){
-        return __('"plugins.generic.cartaPlugin.description');
     }
 
     /**
@@ -92,9 +84,6 @@ class CartaPlugin extends GenericPlugin{
         // Visualizar
         $query = base64_decode( json_encode( $resultado ) );
         $returner = "<a href='crearCarta.php?data=" . $query . "' target='_blank' class='pkp_button_primary'> Ver Carta de Aceptación </a>";
-        $url = "crearCarta.php?data=" . $query;
-        $smarty->assign('cartaLink', returner);
-        $smarty->assign('query', $url);
         $output .= $smarty->fetch($this->getTemplatePath() . 'articleFooter.tpl');
     }
 }
