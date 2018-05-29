@@ -12,9 +12,6 @@
      <div class="">
         <ul>
             <li>
-                {$returner}
-            </li>
-            <li>
                 <a href="{$query}" target='_blank' class='pkp_button_primary'> Ver Carta de Aceptación </a>
             </li>
         </ul>

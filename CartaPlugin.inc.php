@@ -82,5 +82,35 @@ class CartaPlugin extends GenericPlugin{
         $smarty->assign('query', $returner);
         $output .= $smarty->fetch($this->getTemplatePath() . 'articleFooter.tpl');
     }
+
+    function insertFooter($hookName, $params){
+        $smarty =& $params[1];
+        $output =& $params[2];
+        $templateMgr =& TemplateManager::getManager();
+
+		$journal = $templateMgr->get_template_vars('currentJournal');
+		$issue = $templateMgr->get_template_vars('issue');
+        $article = $templateMgr->get_template_vars('article');
+
+        $authors = $article->getAuthors();
+        $nombres = [];
+        foreach ($authors as $author) {
+            $nombres[] = $author->getFullName();
+        }
+        $titulo = $article->getTitle();
+        $status = $article->getStatus();
+        $fechaPublicacion = $article->getDatePublished();
+        if(!$fechaPublicacion){
+            $fechaPublicacion = $issue->getDatePublished();
+        }
+
+        $result[] = array('titulo', $titulo);
+        $result[] = array('autores', $nombres);
+        if($fechaPublicacion){
+            $result[] = array('fechaPublicacion', date('Y-m-d', strtotime($fechaPublicacion)));
+        }
+        $result[] = array('status', $nombres);
+
+    }
 }
 ?>
